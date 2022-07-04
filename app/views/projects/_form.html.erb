@@ -28,12 +28,13 @@
 
   <div class="field">
     <%= form.label :date_end %>
-    <%= form.text_field :date_end %>
+    <%= form.date_select :date_end %>
   </div>
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.number_field :status %>
+    #form.number_field :status
+    <%= select_tag(:status, options_for_select([:propuesta , :en_progreso , :terminado], "propuesta"))  %>
   </div>
 
   <div class="actions">
