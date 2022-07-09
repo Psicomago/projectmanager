@@ -1,28 +1,6 @@
 <<nav class="navbar bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand p-4" href="/#">Projects Manager</a>
-      <a>  <%= link_to 'Nuevo Proyecto', new_project_path %></a>
-      
-
-      <%#= form_tag(projects_path) do  %>
-        <%# <%= label_tag 'projects', "proyectos"%>
-        <%# <%= select_tag "projects", options_from_collection_for_select(@books, "id", "title") %>
-
-        <%#= select_tag "status", options_for_select([ "propuesta", "en_progreso","terminado"], "propuesta") %>
-
-        <%# <select name="status"> %>
-            <%# <option value="0">Propuesta</option>
-            <option value="1">En progreso</option>
-            <option value="2">Terminado</option> %>
-        <%# </select> %> 
-
-
-        <%# <%= datetime_field_tag 'date_loans' , Time.now.strftime("%Y-%m-%d")  %>
-
-        <%#= label_tag 'user_name', "Nombre"%>
-        <%#= text_field_tag 'user_name' %>
-
-        <%#= submit_tag("Guardar") %>
-      <%# end %>
+    <a class="navbar-brand" href="/#">Projects Manager</a>
+    <a><%= link_to 'Nuevo Proyecto', new_project_path %></a>
   </div>
 </nav>

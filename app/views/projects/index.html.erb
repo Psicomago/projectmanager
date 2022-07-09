@@ -1,46 +1,45 @@
- <%# <%= paginate @projects %> 
+
+
 <p id="notice"><%= notice %></p>
 <nav class="navbar bg-light text-center">
-  <%= search_form_for @q do |f| %>
-  <%= f.label :status %>
-  
-  <%= f.select(:status_eq, options_for_select({ "Propuesta" => "0", "En Proceso" => "1", "Terminado" => "2" }),{ include_blank: true }) %>
-  <%= f.submit %>
-<% end %>
-
-
-
-  <%#= form_tag(projects_path) do  %>
-    <%#= label_tag 'projects', "filtrar por estado"%>
-    <%#= select_tag "status", options_for_select([ "propuesta", "en_progreso","terminado", "todos"], "todos") %>
-    <%#= submit_tag("Guardar") %>
-  <%# end %>
+  <div>
+    <%= search_form_for @q do |f| %>
+      <%= f.label :status, "busqueda por:" %>
+      <%= f.select(:status_eq, options_for_select({ "Propuesta" => "0", "En Proceso" => "1", "Terminado" => "2" }),{ include_blank: true }) %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <div>
+    <%= paginate @project, window: 2  %> 
+  </div>
 </nav>
 
 <h1 class="text-center p-4">Projects</h1>
-
-<div class="card-group container">
-  <div class="row row-cols-1 row-cols-md-6 g-4">
+<%# <div class = "container"> %>
+<div class="card-deck m-5 ">
+  <div class="row"> <%# row-cols-1 row-cols-md-3 g-4"> %>
     <% @project.each do |project| %>
-      <div class="col">
-        <div class="card bg-light">
+      <div class="col pb-3 ">
+        <div class="card h-100 bg-light">
           <%# <img src="..." class="card-img-top" alt="..."> %>
           <div class="card-body">
-            <h5 class="card-title fs-4"><%= project.name %></h5>
-            <p class="card-text fs-5"><%= project.description %></p>
+            <h3 class="card-title fs-5"><%= project.name %></h3>
+            <p class="card-text"><%= project.description %></p>
             <hr>
-            <p class="card-text fs-5"><%= fecha(project.date_begin) %></p>
-            <p class="card-text fs-5"><%= fecha(project.date_end) %></p>
+            <p class="card-text"><%= fecha(project.date_begin) %></p>
+            <p class="card-text"><%= fecha(project.date_end) %></p>
             <hr>
             <p class="card-text fs-5"><%= project.status %></p>
-            <p class="card-text text-center"><small class="text-muted"><%= link_to 'Ver', project %> <%= link_to 'Editar', edit_project_path(project) %> <%= link_to 'Eliminar', project, method: :delete, data: { confirm: 'Are you sure?' } %></small></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted"><%= link_to 'Ver', project %> <%= link_to 'Editar', edit_project_path(project) %> <%= link_to 'Eliminar', project, method: :delete, data: { confirm: 'Are you sure?' } %></small>
           </div>
         </div>
       </div>
     <% end %> 
   </div>
 </div>
-
+<%# </div> %>
 <br>
 
 
