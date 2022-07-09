@@ -3,7 +3,16 @@ class ProjectsController < ApplicationController
 
   # GET /projects or /projects.json
   def index
-    @projects = Project.all
+    @q = Project.ransack(params[:q])
+    @project = @q.result
+
+    
+  
+    #@projects = Project.all
+    
+
+    #@projects = Project.propuesta.page(params[:page])
+
   end
 
   # GET /projects/1 or /projects/1.json
@@ -21,6 +30,7 @@ class ProjectsController < ApplicationController
 
   # POST /projects or /projects.json
   def create
+    
     @project = Project.new(project_params)
 
     respond_to do |format|
@@ -60,11 +70,14 @@ class ProjectsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_project
+      @q = Project.ransack(params[:q])
       @project = Project.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def project_params
+      
       params.require(:project).permit(:name, :description, :date_begin, :date_end, :status)
+
     end
 end

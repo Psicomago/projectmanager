@@ -10,34 +10,34 @@
       </ul>
     </div>
   <% end %>
+  <div class="card container style=" style="width: 22rem;">
+    <div class="mb-3 pt-4">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="mb-3">
+      <%= form.label :description %>
+      <%= form.text_field :description %>
+    </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
+    <div class="mb-3">
+      <%= form.label :date_begin %>
+      <%= form.date_select :date_begin, order: [:day, :month, :year] %>
+    </div>
 
-  <div class="field">
-    <%= form.label :date_begin %>
-    <%= form.date_select :date_begin %>
-  </div>
+    <div class="mb-3">
+      <%= form.label :date_end %>
+      <%= form.date_select :date_end, order: [:day, :month, :year] %>
+    </div>
 
-  <div class="field">
-    <%= form.label :date_end %>
-    <%= form.date_select :date_end %>
-  </div>
+    <div class="mb-3">
+      <%= form.label :status %>
+      <%= form.select :status, [[:propuesta], [:en_progreso], [:terminado]], selected: :propuesta %>
+    </div>
 
-  <div class="field">
-    <%= form.label :status %>
-    #form.number_field :status
-    <%= select_tag(:status, options_for_select([:propuesta , :en_progreso , :terminado], "propuesta"))  %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>

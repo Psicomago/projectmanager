@@ -1,29 +1,23 @@
 <p id="notice"><%= notice %></p>
+<div class="card container" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <p>
+      <li class="list-group-item">NOMBRE PROYECTO: <%= @project.name %> </li>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+    <p>
+      <li class="list-group-item">DESCRIPCIÓN: <%= @project.description %> </li>      
+      <p class="card-text pt-4 px-4">FECHA INICIO: <%= fecha(@project.date_begin) %> </p>   
+      <p class="card-text pt-4 px-4">FECHA TERMINO: <%= fecha(@project.date_end) %> </p>  
+      <p class="card-text pt-4 px-4">ESTADO: <%= @project.status %> </p>  
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+    </p>
 
-<p>
-  <strong>Date begin:</strong>
-  <%= @project.date_begin %>
-</p>
+    <p class="text-center">
+      <%= link_to 'Edit', edit_project_path(@project) %> |
+      <%= link_to 'Back', projects_path %>
+    </p>
 
-<p>
-  <strong>Date end:</strong>
-  <%= @project.date_end %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @project.status %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+    
+  </ul>
+</div>
