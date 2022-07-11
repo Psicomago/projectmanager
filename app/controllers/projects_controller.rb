@@ -6,7 +6,8 @@ class ProjectsController < ApplicationController
     @q = Project.ransack(params[:q])
     #@q = Project.order(:name).page.ransack(params[:q])
     #@project = @q.result.order(:name) params[:page]
-    @project = @q.result(distinct: false).page(params[:page]).per(6)
+
+    @project = @q.result(distinct: false).order(name: :asc).page(params[:page]).per(6)
     
   
     #@projects = Project.all

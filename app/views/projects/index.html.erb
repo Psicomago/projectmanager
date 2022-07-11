@@ -1,26 +1,24 @@
 
 
 <p id="notice"><%= notice %></p>
-<nav class="navbar bg-light text-center">
-  <div>
+<nav>
+  <div class="text-center">
     <%= search_form_for @q do |f| %>
       <%= f.label :status, "busqueda por:" %>
       <%= f.select(:status_eq, options_for_select({ "Propuesta" => "0", "En Proceso" => "1", "Terminado" => "2" }),{ include_blank: true }) %>
       <%= f.submit %>
     <% end %>
   </div>
-  <div>
-    <%= paginate @project, window: 2  %> 
-  </div>
+  <a><%= paginate @project %></a>
 </nav>
 
-<h1 class="text-center p-4">Projects</h1>
+<%# <h1 class="text-center p-4">Projects</h1> %>
 <%# <div class = "container"> %>
-<div class="card-deck m-5 ">
-  <div class="row"> <%# row-cols-1 row-cols-md-3 g-4"> %>
+<div class="card-deck m-5">
+  <div class="row text-center"> <%# row-cols-1 row-cols-md-3 g-4"> %>
     <% @project.each do |project| %>
       <div class="col pb-3 ">
-        <div class="card h-100 bg-light">
+        <div class="card h-100 bg-light" style="width: 18rem;">
           <%# <img src="..." class="card-img-top" alt="..."> %>
           <div class="card-body">
             <h3 class="card-title fs-5"><%= project.name %></h3>
@@ -40,6 +38,6 @@
   </div>
 </div>
 <%# </div> %>
-<br>
-
-
+<div class="text-center">
+  <strong><%= paginate @project %></strong>
+</div>

@@ -1,6 +1,7 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 body {
     background-color: rgb(180, 237, 252);
     color: #333;
@@ -9,3 +10,23 @@ body {
     font-size: 13px;
     line-height: 18px;
   }
+
+  /* unvisited link */
+a:link {
+  color: red;
+}
+
+/* visited link */
+a:visited {
+  color: green;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}

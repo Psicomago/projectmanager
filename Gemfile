@@ -71,3 +71,4 @@ gem 'ransack'
 
 #06-07-2022 se agrega faker
 gem 'faker'
+
