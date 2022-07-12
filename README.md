@@ -5,7 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Link heroku: https://projectmanager-g3.herokuapp.com/
+
+* Ruby version 
 
 * System dependencies
 

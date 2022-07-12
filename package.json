@@ -2,6 +2,7 @@
   "name": "projects_manager",
   "private": true,
   "dependencies": {
-    "bootstrap-icons": "^1.8.3"
+    "bootstrap-icons": "^1.8.3",
+    "rfs": "^9.0.6"
   }
 }
